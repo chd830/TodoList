@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-${map}
+Hello
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="/resources/js/index.js"></script>
 </body>
