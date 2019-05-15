@@ -15,8 +15,4 @@ public class TodoRepositoryImpl implements TodoRepository{
         Todo todo = sqlSession.selectOne("mapper.selectOne");
         return todo;
     }
-    public String test() {
-        String test = sqlSession.selectOne("mapper.test");
-        return test;
-    }
 }

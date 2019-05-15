@@ -4,5 +4,4 @@ import com.todo.demo.data.Todo;
 
 public interface TodoRepository {
     Todo selectList();
-    String test();
 }

@@ -16,9 +16,4 @@ public class TodoServiceImpl implements TodoService{
         Todo todo = todoRepository.selectList();
         return todo;
     }
-    @Override
-    public String test() {
-        String test = todoRepository.test();
-        return test;
-    }
 }

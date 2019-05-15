@@ -11,10 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<%
-
-%>
-${title}
-${todo}
+${todo.title}
 </body>
 </html>

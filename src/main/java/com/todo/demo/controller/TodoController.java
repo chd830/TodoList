@@ -15,7 +15,8 @@ public class TodoController {
 
     @RequestMapping(value = "/")
     public String index(Model model) {
-        String t = todoService.test();
+        Todo todo = todoService.getList();
+        model.addAttribute("todo", todo);
         return "index";
     }
 

@@ -4,5 +4,4 @@ import com.todo.demo.data.Todo;
 
 public interface TodoService {
     Todo getList();
-    String test();
 }
