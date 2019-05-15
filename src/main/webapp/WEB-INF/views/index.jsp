@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-Hello
+<%
+
+%>
+${title}
+${todo}
 </body>
 </html>

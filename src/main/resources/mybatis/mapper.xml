@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper">
+    <select id="selectOne" resultType="com.todo.demo.data.Todo">
+      SELECT title, content, deadline, priority, isComplete
+      FROM todotable
+      WHERE todoNo = 1;
+    </select>
+    <select id="test" resultType="String">
+        SELECT title
+        FROM TODOTABLE
+        WHERE todoNo = 1;
+    </select>
+
+</mapper>
