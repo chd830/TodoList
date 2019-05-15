@@ -4,11 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
-        </mvc:message-converters>
-    </mvc:annotation-driven><!-- Annotation 활성화 -->
+    <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resource/"/>
 
     <context:component-scan base-package="com.todo.demo.controller" use-default-filters="false">
@@ -18,5 +14,4 @@
         <property name="prefix" value="/WEB-INF/views/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-    <bean id="JSON" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
 </beans>
