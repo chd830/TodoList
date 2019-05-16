@@ -5,18 +5,32 @@ import com.todo.demo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
-public class TodoServiceImpl implements TodoService{
+public class TodoServiceImpl implements TodoService {
 
     @Autowired
     private TodoRepository todoRepository;
 
     @Override
-    public List<Map<Integer, String>> getList() {
-        List<Map<Integer, String>> map = todoRepository.selectList();
-        return map;
+    public Todo getTodo(int num) {
+        Todo todo = todoRepository.select(num);
+        return todo;
+    }
+    public Todo makeTodoList2() {
+        return getTodo(2);
+    }
+    public List<Todo> makeTodoList() {
+        List<Todo> todoList = new ArrayList();
+
+        int n = todoRepository.selectTodoNo();
+        for(int i = 0; i < n; i++) {
+            Todo todo = getTodo(i + 1);
+            todoList.add(todo);
+        }
+        return todoList;
     }
 }
