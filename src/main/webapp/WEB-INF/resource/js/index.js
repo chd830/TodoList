@@ -1,12 +1,11 @@
-$.post("/getList", function (result) {
-    console.dir(result);
+$.post("/setTodoList", function (result) {
+    var str = "";
     for(var i = 0 in result) {
-        document.write("<table>")
-        document.write("<tr>")
-        document.write("<td>" + result[i].title + "</td>");
-        document.write("<td>" + result[i].priority + "</td>");
-        document.write("<td>" + result[i].isComplete + "</td>");
-        document.write("</tr>");
-        documentg.write("</table>");
+        str += "<tr>";
+        str += "<td>" + result[i].title + "</td>";
+        str += "<td>" + result[i].priority + "</td>";
+        str += "<td>" + result[i].isComplete + "</td>";
+        str += "</tr>";
+        $("#table").html(str);
     }
 })

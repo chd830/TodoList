@@ -1,37 +1,37 @@
 package com.todo.demo.service;
 
 import com.todo.demo.data.Todo;
-import com.todo.demo.repository.TodoRepository;
+import com.todo.demo.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class TodoServiceImpl implements TodoService {
+@org.springframework.stereotype.Service
+public class ServiceImpl implements Service {
 
     @Autowired
-    private TodoRepository todoRepository;
+    private Repository repository;
 
     @Override
     public Todo getTodo(int num) {
-        Todo todo = todoRepository.select(num);
+        Todo todo = repository.select(num);
         return todo;
     }
 
-    public Todo makeTodoList2() {
-        return getTodo(2);
-    }
 
     public List<Todo> makeTodoList() {
         List<Todo> todoList = new ArrayList();
 
-        int n = todoRepository.selectTodoNo();
+        int n = repository.selectTodoNo();
         for (int i = 0; i < n; i++) {
             Todo todo = getTodo(i + 1);
             todoList.add(todo);
         }
         return todoList;
+    }
+
+    public void setTodo(Todo todo) {
+        repository.insertTodo(todo);
     }
 }

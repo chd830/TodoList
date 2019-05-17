@@ -9,10 +9,20 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        table, tr, td {
+            border : 1px solid black;
+            text-align: center;
+        }
+        td {
+            width: 5%;
+        }
+    </style>
 </head>
 <body>
-Hello
-${model}
+<table id="table">
+
+</table>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="/resources/js/index.js"></script>
 </body>
