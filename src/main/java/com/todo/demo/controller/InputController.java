@@ -24,12 +24,11 @@ public class InputController {
 
     @ResponseBody
     @RequestMapping(value = "/setTodo", method = RequestMethod.POST)
-    public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam Date deadline, @RequestParam boolean isComplete) {
+    public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam Date deadline) {
         Todo todo = new Todo();
         todo.setTitle(title);
         todo.setContent(content);
         todo.setDeadline(deadline);
-        todo.setComplete(isComplete);
         service.setTodo(todo);
     }
 }

@@ -49,12 +49,6 @@
                     <input type="date" id="deadline"/>
                 </div>
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label">IsComplete</label>
-                    <input id="true" type="radio" name="check" value="True">True
-                    <input id="false" type="radio" name="check" value="False">False
-                </div>
-
                 <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
                     <div class="col-md-offset-3 col-md-9">
                         <button id="input" type="button" class="btn btn-success">Input Data</button>
