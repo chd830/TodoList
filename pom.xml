@@ -27,6 +27,9 @@
         <spring-jdbc.version>4.3.18.RELEASE</spring-jdbc.version>
         <mysql-connector-java.version>6.0.6</mysql-connector-java.version>
         <jackson-databind.version>2.8.1</jackson-databind.version>
+        <bootstrap.version>4.1.1</bootstrap.version>
+        <jquery.version>3.1.1</jquery.version>
+        <momentjs.version>2.24.0</momentjs.version>
     </properties>
 
     <dependencies>
@@ -92,6 +95,24 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+
+        <!-- WEBJARS DEPENDENCIES START -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${jquery.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>momentjs</artifactId>
+            <version>${momentjs.version}</version>
+        </dependency>
+        <!-- WEBJARS DEPENDENCIES END -->
     </dependencies>
 
     <build>

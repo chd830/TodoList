@@ -6,6 +6,7 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="/WEB-INF/resource/"/>
+    <mvc:resources mapping="/webjars/**" location="/webjars/"/>
 
     <context:component-scan base-package="com.todo.demo.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>

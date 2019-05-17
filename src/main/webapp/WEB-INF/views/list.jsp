@@ -23,7 +23,8 @@
 <table id="table">
 
 </table>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script src="/resources/js/index.js"></script>
+<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/moment.js/2.24.0/moment.min.js"></script>
+<script src="/resources/js/list.js"></script>
 </body>
 </html>

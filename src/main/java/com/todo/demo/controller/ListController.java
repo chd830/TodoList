@@ -18,10 +18,8 @@ public class ListController {
 
     @RequestMapping(value = "/")
     public String index() {
-        return "index";
+        return "list";
     }
-
-
 
     @RequestMapping(value = "/setTodoList", method = RequestMethod.POST)
     @ResponseBody
