@@ -9,7 +9,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="/resources/css/input.js" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template -->
 
 </head>
@@ -53,7 +53,6 @@
                     <div class="col-md-offset-3 col-md-9">
                         <button id="input" type="button" class="btn btn-success">Input Data</button>
                     </div>
-
                 </div>
             </form>
         </div>

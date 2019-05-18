@@ -24,4 +24,15 @@
         FROM todotable
         WHERE todoNo = #{num};
     </select>
+
+    <delete id="deleteTodo">
+        DELETE FROM todotable
+        WHERE todoNo = #{num};
+    </delete>
+
+    <update id="updateTodo" parameterType="com.todo.demo.data.Todo">
+        UPDATE todotable
+        SET title = #{title}, content = #{content}, deadline = #{deadline}
+        WHERE todoNo = #{num}
+    </update>
 </mapper>

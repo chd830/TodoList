@@ -12,8 +12,6 @@ $(document).ready(function () {
         for (var i = 0; i < result.length; i++) {
             str += "<tr class='row'>";
             str += "<td>" + i + "</td>";
-            // var num = (i+1)*1;
-            // str += "<td>" +"<a href=\"/getTodo?num="+num+"\">" +  result[i].title + "</a></td>";
             str += "<td>" + result[i].title + "</a></td>";
             str += "<td>" + result[i].priority + "</td>";
             str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD')+"</td>";
@@ -30,6 +28,7 @@ $(document).bind("click", ".row", function (event) {
     str *= 1 ;
     $.get('/getTodo?num='+(str+1),{
     }, function(result) {
+        console.dir(result);
         document.write(result);
     })
 

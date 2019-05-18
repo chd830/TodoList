@@ -16,11 +16,6 @@ public class ListController {
     @Autowired
     Service service;
 
-    @RequestMapping(value = "/")
-    public String index() {
-        return "list";
-    }
-
     @RequestMapping(value = "/setTodoList", method = RequestMethod.POST)
     @ResponseBody
     public List<Todo> getTodo() {

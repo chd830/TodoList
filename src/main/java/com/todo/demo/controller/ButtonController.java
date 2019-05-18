@@ -13,20 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Date;
 
 @Controller
-public class InputController {
+public class ButtonController {
 
     @Autowired
     Service service;
-
-    @RequestMapping(value = "/input")
-    public String input() {
-        return "input";
-    }
-
-    @RequestMapping(value = "/detail")
-    public String detail() {
-        return "detail";
-    }
 
     @ResponseBody
     @RequestMapping(value = "/setTodo", method = RequestMethod.POST)
@@ -45,4 +35,17 @@ public class InputController {
         modelAndView.addObject("model", service.getTodo(num));
         return modelAndView;
     }
+
+//    @ResponseBody
+//    @RequestMapping(value = "updateTodo", method = RequestMethod.POST)
+//    public void updateTodo(@RequestParam String title, @RequestParam String content, @RequestParam Date deadline, @RequestParam boolean isComplete) {
+//
+//    }
+//
+//    @ResponseBody
+//    @RequestMapping(value = "deleteTodo", method = RequestMethod.POST.POST)
+//    public void deleteTodo(@RequestParam int num) {
+//
+//    }
+
 }
