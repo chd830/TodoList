@@ -28,13 +28,6 @@ $(document).ready(function () {
 //     console.dir("")
 // } );
 $(document).bind("click", ".row", function (event) {
-    // for(var i = 0; i < 5; i++) {
-    //     console.dir($('.row').children().eq(i).text());
-    // }
-    var str = event.target;
-    console.dir(str.childNodes[0].nodeValue);
-    // console.dir($('.row').children().eq(0).text());
-    // console.log($(this));
-    // var b = $(this).children().eq(0);
-    // console.dir(b.children());
+    var str = event.target.childNodes[0];
+    console.dir(str.parentNode.parentNode.childNodes[0].textContent);
 });
