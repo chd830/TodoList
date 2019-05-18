@@ -39,11 +39,10 @@ public class InputController {
     }
 
     @RequestMapping(value = "/getTodo", method = RequestMethod.GET)
-    public ModelAndView getTodo(int num) {
+    public ModelAndView getTodo(@RequestParam int num) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/detail");
         modelAndView.addObject("model", service.getTodo(num));
         return modelAndView;
     }
-//<td><a href="${{path}/board/view.do?bno=${row.bno}">${row.title}</a></td>
 }

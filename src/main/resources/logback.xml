@@ -13,7 +13,7 @@
     <appender-ref ref="STDOUT" />
   </logger>
 
-  <logger name="ac.dankook.postboard" level="DEBUG" additivity="false">
+  <logger name="com.todo.demo" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT" />
   </logger>
 

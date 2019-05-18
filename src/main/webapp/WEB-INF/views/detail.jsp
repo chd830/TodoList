@@ -12,10 +12,10 @@
 </head>
 <body>
 
-<div id="title"></div>
-<div id="content"></div>
-<div id="deadline"></div>
-<div id="check"></div>
+<div id="title">${model.getTitle()}</div>
+<div id="content">${model.content}</div>
+<div id="deadline">${model.deadline}</div>
+<div id="check">${model.complete}</div>
 
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
