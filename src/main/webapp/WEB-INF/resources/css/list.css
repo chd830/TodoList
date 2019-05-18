@@ -2,6 +2,9 @@ table, tr, td {
     border : 1px solid black;
     text-align: center;
 }
+tr {
+    cursor: pointer;
+}
 td {
     width: 5%;
 }

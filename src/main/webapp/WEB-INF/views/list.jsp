@@ -21,10 +21,20 @@
 </head>
 <body>
 <table id="table">
-
+<tr>
+    <td>No</td>
+    <td>Title</td>
+    <td>Priority</td>
+    <td>Deadline</td>
+    <td>IsComplete</td>
+</tr>
 </table>
-<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="/webjars/moment.js/2.24.0/moment.min.js"></script>
+<%--<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>--%>
+<%--<script type="text/javascript" src="/webjars/moment.js/2.24.0/moment.min.js"></script>--%>
+<%--<script src="/resources/js/list.js"></script>--%>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script src="/resources/js/list.js"></script>
+<script src="/resources/js/moment.js"></script>
 </body>
 </html>

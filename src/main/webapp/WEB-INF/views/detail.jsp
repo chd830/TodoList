@@ -11,6 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<div id="title"></div>
+<div id="content"></div>
+<div id="deadline"></div>
+<div id="check"></div>
 </body>
 </html>

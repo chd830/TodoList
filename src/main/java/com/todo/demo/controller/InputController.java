@@ -31,4 +31,11 @@ public class InputController {
         todo.setDeadline(deadline);
         service.setTodo(todo);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getTodo", method = RequestMethod.GET)
+    public void getTodo(@RequestParam int todoNo) {
+        Todo todo = new Todo();
+
+    }
 }

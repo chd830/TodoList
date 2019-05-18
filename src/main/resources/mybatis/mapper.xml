@@ -13,8 +13,15 @@
       SELECT MAX(todoNo)
       FROM todotable;
     </select>
+
     <insert id="insertTodo">
         INSERT INTO todotable(title, content, deadline, priority, isComplete)
         VALUES(#{title}, #{content}, #{deadline}, 1, false);
     </insert>
+
+    <select id="selectTodo" resultType="com.todo.demo.data.Todo">
+        SELECT title, content, deadline, isComplete
+        FROM todotable
+        WHERE todoNo = #{num};
+    </select>
 </mapper>

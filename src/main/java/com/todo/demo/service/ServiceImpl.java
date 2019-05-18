@@ -15,7 +15,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public Todo getTodo(int num) {
-        Todo todo = repository.select(num);
+        Todo todo = repository.selectTodo(num);
         return todo;
     }
 

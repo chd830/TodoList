@@ -10,13 +10,14 @@ public class RepositoryImpl implements Repository {
     @Autowired
     private SqlSession sqlSession;
 
-    public Todo select(int num) {
+    public Todo selectTodo(int num) {
         return sqlSession.selectOne("mapper.selectList", num);
     }
 
     public int selectTodoNo() {
         return sqlSession.selectOne("mapper.selectTodoNo");
     }
+
     public void insertTodo(Todo todo) {
         sqlSession.selectOne("mapper.insertTodo", todo);
     }
