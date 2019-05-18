@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper">
     <select id="selectList" resultType="com.todo.demo.data.Todo">
-      SELECT title, priority,deadline, isComplete
+      SELECT title, content, priority,deadline, isComplete
       FROM todotable
       WHERE todoNo = #{num};
     </select>

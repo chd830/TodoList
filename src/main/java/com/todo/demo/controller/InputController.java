@@ -21,7 +21,10 @@ public class InputController {
     public String input() {
         return "input";
     }
-
+    @RequestMapping(value = "/detail")
+    public String detail() {
+        return "detail";
+    }
     @ResponseBody
     @RequestMapping(value = "/setTodo", method = RequestMethod.POST)
     public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam Date deadline) {
@@ -34,8 +37,9 @@ public class InputController {
 
     @ResponseBody
     @RequestMapping(value = "/getTodo", method = RequestMethod.GET)
-    public void getTodo(@RequestParam int todoNo) {
-        Todo todo = new Todo();
-
+    public Todo getTodo() {
+        Todo todo = service.getTodo(1);
+        return todo;
     }
+//<td><a href="${{path}/board/view.do?bno=${row.bno}">${row.title}</a></td>
 }

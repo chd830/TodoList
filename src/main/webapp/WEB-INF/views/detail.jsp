@@ -11,9 +11,15 @@
     <title>Title</title>
 </head>
 <body>
+
 <div id="title"></div>
 <div id="content"></div>
 <div id="deadline"></div>
 <div id="check"></div>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="/resources/js/detail.js"></script>
+<script src="/resources/js/moment.js"></script>
 </body>
 </html>
