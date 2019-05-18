@@ -7,16 +7,18 @@ $(document).ready(function () {
         str += "<td> Title </td>";
         str += "<td> Priority </td>";
         str += "<td> Deadline </td>";
-        str += "<td> IsComplete </td>";
+        str += "<td> Complete </td>";
         $("#table").html(str);
+        console.dir(result[1]);
         for (var i = 0; i < result.length; i++) {
             str += "<tr class='row'>";
             str += "<td>" + i + "</td>";
-            str += "<td>" + result[i].title + "</td>";
+            // str += "<td>" +"<a href=\"/getTodo?num="+(i+1)+"\">" +  result[i].title + "</a></td>";
+            str += "<td>" + result[i].title + "</a></td>";
+
             str += "<td>" + result[i].priority + "</td>";
-            str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD');
-            +"</td>";
-            str += "<td>" + result[i].isComplete + "</td>";
+            str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD')+"</td>";
+            str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
 
@@ -24,10 +26,13 @@ $(document).ready(function () {
     });
     $("<style>").text(".row { cursor: pointer; } ").appendTo("head");
 });
-// $(document).bind("click", "#row", function(){
-//     console.dir("")
-// } );
 $(document).bind("click", ".row", function (event) {
-    var str = event.target.childNodes[0];
-    console.dir(str.parentNode.parentNode.childNodes[0].textContent);
+    var str = event.target.childNodes[0].parentNode.parentNode.childNodes[0].textContent;
+    str *= 1 ;
+    $.get('/getTodo?num='+(str+1),{
+        num: (str+1)
+    }, function() {
+        location.href = '/detail';
+    })
+
 });

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
@@ -21,10 +22,12 @@ public class InputController {
     public String input() {
         return "input";
     }
+
     @RequestMapping(value = "/detail")
     public String detail() {
         return "detail";
     }
+
     @ResponseBody
     @RequestMapping(value = "/setTodo", method = RequestMethod.POST)
     public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam Date deadline) {
@@ -35,11 +38,12 @@ public class InputController {
         service.setTodo(todo);
     }
 
-    @ResponseBody
     @RequestMapping(value = "/getTodo", method = RequestMethod.GET)
-    public Todo getTodo() {
-        Todo todo = service.getTodo(1);
-        return todo;
+    public ModelAndView getTodo(int num) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/detail");
+        modelAndView.addObject("model", service.getTodo(num));
+        return modelAndView;
     }
 //<td><a href="${{path}/board/view.do?bno=${row.bno}">${row.title}</a></td>
 }
