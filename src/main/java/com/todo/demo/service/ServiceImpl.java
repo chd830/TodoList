@@ -23,7 +23,7 @@ public class ServiceImpl implements Service {
     public List<Todo> makeTodoList() {
         List<Todo> todoList = new ArrayList();
 
-        int n = repository.selectTodoNo();
+        int n = repository.selectMaxTodoNo();
         for (int i = 0; i < n; i++) {
             Todo todo = getTodo(i + 1);
             todoList.add(todo);

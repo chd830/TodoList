@@ -20,11 +20,20 @@
     </style>
 </head>
 <body>
-<table id="table">
-<tr>
+<div>
+    <table id="table">
+        <tr>
 
-</tr>
-</table>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+<div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+        <button id="input" type="button" class="btn btn-success">Input Data</button>
+    </div>
+</div>
 <%--<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>--%>
 <%--<script type="text/javascript" src="/webjars/moment.js/2.24.0/moment.min.js"></script>--%>
 <%--<script src="/resources/js/list.js"></script>--%>

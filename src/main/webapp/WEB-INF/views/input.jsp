@@ -45,12 +45,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="deadline" class="col-md-3 control-label">Deadline</label>
-                    <input type="date" id="deadline"/>
+                    <label for="priority" class="col-md-3 control-label">Priority</label>
+                    <input type="number" id="priority" min="1" max="5"/>
                 </div>
 
-                <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+                <div class="form-group" id="setDeadline">
+                    <label for="deadline" class="col-md-3 control-label">Deadline</label>
+                    <input type="date" id="deadline" />
+                </div>
+
+                <div id="addDeadline" style="border-top: 1px solid #999; padding-top:20px" class="form-group">
                     <div class="col-md-offset-3 col-md-9">
+                        <button id="deadlineBtn" type="button" class="btn btn-success">Add Deadline</button>
                         <button id="input" type="button" class="btn btn-success">Input Data</button>
                     </div>
                 </div>

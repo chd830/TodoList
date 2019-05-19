@@ -5,7 +5,7 @@ $('#delete').click(function() {
     $.post('/deleteTodo', {
         todoNo: todoNo
     },function() {
-        console.log("delete");
+        location.href="/";
     });
 });
 
@@ -18,6 +18,6 @@ $('#update').click(function() {
         title: title,
         content: content,
     }, function() {
-        console.log("update");
+        location.href = "/";
     });
 });

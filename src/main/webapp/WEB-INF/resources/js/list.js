@@ -10,12 +10,12 @@ $(document).ready(function () {
         str += "<td> Complete </td>";
         $("#table").html(str);
         for (var i = 0; i < result.length; i++) {
-            if(result[i] == null) continue;
+            if (result[i] == null) continue;
             str += "<tr class='row'>";
             str += "<td>" + i + "</td>";
             str += "<td>" + result[i].title + "</a></td>";
             str += "<td>" + result[i].priority + "</td>";
-            str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD')+"</td>";
+            str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD') + "</td>";
             str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
@@ -24,13 +24,19 @@ $(document).ready(function () {
     });
     $("<style>").text(".row { cursor: pointer; } ").appendTo("head");
 });
-$(document).bind("click", ".row", function (event) {
-    var str = event.target.childNodes[0].parentNode.parentNode.childNodes[0].textContent;
-    str *= 1 ;
-    $.get('/getTodo?todoNo='+(str+1),{
-    }, function(result) {
-        console.log(result);
-        document.write(result);
-    })
+$('#input').click(function () {
+    location.href = '/input';
+});
 
+$(document).bind("click", ".row", function (event) {
+    var str = event.target.childNodes[0];
+    if(str.textContent == "false") str.textContent = "true";
+    str = str.parentNode.parentNode.childNodes[0].textContent;
+    // var str = event.target.childNodes[0].parentNode.parentNode.childNodes[0].textContent;
+    str *= 1;
+    str += 1;
+    if (str === 0) location.href = '/input';
+    $.get('/getTodo?todoNo=' + str , function (result) {
+        document.write(result);
+    });
 });

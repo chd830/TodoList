@@ -4,7 +4,7 @@ import com.todo.demo.data.Todo;
 
 public interface Repository {
     Todo selectTodo(int todoNo);
-    int selectTodoNo();
+    int selectMaxTodoNo();
     void insertTodo(Todo todo);
     void updateTodo(Todo todo);
     void deleteTodo(int todoNo);

@@ -9,14 +9,19 @@
       WHERE todoNo = #{todoNo};
     </select>
 
-    <select id="selectTodoNo" resultType="Integer">
+    <select id="selectMaxTodoNo" resultType="Integer">
       SELECT MAX(todoNo)
       FROM todotable;
     </select>
 
     <insert id="insertTodo">
         INSERT INTO todotable(title, content, deadline, priority, isComplete)
-        VALUES(#{title}, #{content}, #{deadline}, 1, false);
+        VALUES(#{title}, #{content}, #{deadline}, #{priority}, false);
+    </insert>
+
+    <insert id="insertTodoWithoutDeadline">
+        INSERT INTO todotable(title, content, priority, isComplete)
+        VALUES(#{title}, #{content}, #{priority}, false);
     </insert>
 
     <delete id="deleteTodo">

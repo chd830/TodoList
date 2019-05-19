@@ -17,7 +17,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>INPUT DATA</h1>
+            <h1>Detail DATA</h1>
         </div>
 
         <div class="panel-body">

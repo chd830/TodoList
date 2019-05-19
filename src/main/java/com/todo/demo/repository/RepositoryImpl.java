@@ -14,8 +14,8 @@ public class RepositoryImpl implements Repository {
         return sqlSession.selectOne("mapper.selectTodo", todoNo);
     }
 
-    public int selectTodoNo() {
-        return sqlSession.selectOne("mapper.selectTodoNo");
+    public int selectMaxTodoNo() {
+        return sqlSession.selectOne("mapper.selectMaxTodoNo");
     }
 
     public void insertTodo(Todo todo) {
