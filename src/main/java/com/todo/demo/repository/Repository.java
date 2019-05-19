@@ -7,5 +7,6 @@ public interface Repository {
     int selectMaxTodoNo();
     void insertTodo(Todo todo);
     void updateTodo(Todo todo);
+    void updateIsComplete(int todoNo);
     void deleteTodo(int todoNo);
 }

@@ -2,7 +2,6 @@
 var check = 0;
 $('#setDeadline').hide();
 $('#deadlineBtn').click(function() {
-    console.log(check);
     if(check === 1) {
         $('#setDeadline').hide();
         $(this).html('Add Deadline');
@@ -17,14 +16,33 @@ $('#deadlineBtn').click(function() {
 $('#input').click(function () {
     var title = $('#title').val();
     var content = $('#content').val();
-    var deadline = $('#deadline').val();
     var priority = $('#priority').val();
-    $.post('/setTodo', {
-        title: title,
-        content: content,
-        deadline: deadline,
-        priority: priority
-    }, function () {
-        location.href = "/";
-    });
+    console.dir($('#title'));
+    if(priority > 5) {
+        alert("Priority is bigger than 5");
+        $('#title').val("");
+        $('#content').val("");
+        $('#priority').val("");
+    }
+    else if(check === 0) {
+        var deadline = $('#deadline').val();
+        $.post('/setTodoWithoutDeadline', {
+            title: title,
+            content: content,
+            deadline: deadline,
+            priority: priority
+        }, function() {
+            location.href = "/";
+        })
+    }
+    else {
+        $.post('/setTodo', {
+            title: title,
+            content: content,
+            priority: priority
+        }, function () {
+            location.href = "/";
+        });
+    }
+
 });

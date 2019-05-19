@@ -24,8 +24,18 @@ public class ButtonController {
     public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam String deadline, @RequestParam int priority) {
         Todo todo = new Todo();
         todo.setTitle(title);
-        todo.setContent(content);
         todo.setDeadline(deadline);
+        todo.setContent(content);
+        todo.setPriority(priority);
+        service.setTodo(todo);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/setTodoWithoutDeadline", method = RequestMethod.POST)
+    public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam int priority) {
+        Todo todo = new Todo();
+        todo.setTitle(title);
+        todo.setContent(content);
         todo.setPriority(priority);
         service.setTodo(todo);
     }

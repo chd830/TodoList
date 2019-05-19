@@ -19,11 +19,6 @@
         VALUES(#{title}, #{content}, #{deadline}, #{priority}, false);
     </insert>
 
-    <insert id="insertTodoWithoutDeadline">
-        INSERT INTO todotable(title, content, priority, isComplete)
-        VALUES(#{title}, #{content}, #{priority}, false);
-    </insert>
-
     <delete id="deleteTodo">
         DELETE FROM todotable
         WHERE todoNo = #{todoNo};
@@ -31,7 +26,13 @@
 
     <update id="updateTodo" parameterType="com.todo.demo.data.Todo">
         UPDATE todotable
-        SET title = #{title}, content = #{content}
+        SET title = #{title}, content = #{content}, isComplete = #{isComplete}
+        WHERE todoNo = #{todoNo}
+    </update>
+
+    <update id="updateIsComplete" parameterType="Integer">
+        UPDATE todotable
+        SET isComplete = #{isComplete}
         WHERE todoNo = #{todoNo}
     </update>
 </mapper>

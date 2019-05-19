@@ -22,7 +22,15 @@ public class RepositoryImpl implements Repository {
         sqlSession.selectOne("mapper.insertTodo", todo);
     }
 
-    public void updateTodo(Todo todo) { sqlSession.selectOne("mapper.updateTodo", todo); }
+    public void updateTodo(Todo todo) {
+        sqlSession.selectOne("mapper.updateTodo", todo);
+    }
 
-    public void deleteTodo(int todoNo) { sqlSession.selectOne("mapper.deleteTodo", todoNo); }
+    public void updateIsComplete(int todoNo) {
+        sqlSession.selectOne("mapper.updateIsComplete", todoNo);
+    }
+
+    public void deleteTodo(int todoNo) {
+        sqlSession.selectOne("mapper.deleteTodo", todoNo);
+    }
 }

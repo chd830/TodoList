@@ -39,6 +39,10 @@ public class ServiceImpl implements Service {
         repository.updateTodo(todo);
     }
 
+    public void updateIsComplete(int todoNo) {
+        repository.updateIsComplete(todoNo);
+    }
+
     public void deleteTodo(int todoNo) {
         repository.deleteTodo(todoNo);
     }

@@ -15,7 +15,8 @@ $(document).ready(function () {
             str += "<td>" + i + "</td>";
             str += "<td>" + result[i].title + "</a></td>";
             str += "<td>" + result[i].priority + "</td>";
-            str += "<td>" + moment.utc(result[i].deadline).format('YYYY-MM-DD') + "</td>";
+            if (result[i].deadline === null) str += "<td></td>";
+            else str += "<td>" + result[i].deadline + "</td>";
             str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
@@ -24,19 +25,45 @@ $(document).ready(function () {
     });
     $("<style>").text(".row { cursor: pointer; } ").appendTo("head");
 });
-$('#input').click(function () {
-    location.href = '/input';
-});
 
 $(document).bind("click", ".row", function (event) {
     var str = event.target.childNodes[0];
-    if(str.textContent == "false") str.textContent = "true";
-    str = str.parentNode.parentNode.childNodes[0].textContent;
-    // var str = event.target.childNodes[0].parentNode.parentNode.childNodes[0].textContent;
-    str *= 1;
-    str += 1;
-    if (str === 0) location.href = '/input';
-    $.get('/getTodo?todoNo=' + str , function (result) {
-        document.write(result);
-    });
+    console.dir(str);
+    if (str.textContent == "false") {
+        var todoNo = str.parentNode.parentNode.childNodes[0].textContent;
+        todoNo *= 1;
+        todoNo += 1;
+        var title = str.parentNode.parentNode.childNodes[1].textContent;
+        $.post('/updateIsComplete', {
+            todoNo: todoNo,
+            isComplete: true
+        }, function () {
+            str.textContent = "true";
+        })
+    }
+    else if (str.textContent == "true") {
+        var todoNo = str.parentNode.parentNode.childNodes[0].textContent;
+        todoNo *= 1;
+        todoNo += 1;
+        var title = str.parentNode.parentNode.childNodes[1].textContent;
+        $.post('updateTodo', {
+            todoNo: todoNo,
+            isComplete: 0
+        }, function () {
+            str.textContent = "false";
+        })
+    }
+
+    else {
+        str = str.parentNode.parentNode.childNodes[0].textContent;
+        str *= 1;
+        console.log(str);
+        if (str === 0) location.href = '/input';
+        else {
+            str += 1;
+            $.get('/getTodo?todoNo=' + str, function (result) {
+                document.write(result);
+            });
+        }
+    }
 });

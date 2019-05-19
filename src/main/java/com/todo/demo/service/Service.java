@@ -9,5 +9,6 @@ public interface Service {
     List<Todo> makeTodoList();
     void setTodo(Todo todo);
     void updateTodo(Todo todo);
+    void updateIsComplete(int todoNo);
     void deleteTodo(int todoNo);
 }
