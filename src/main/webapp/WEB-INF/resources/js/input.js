@@ -37,13 +37,22 @@ $('#input').click(function () {
         var deadlineArr = deadline.split('-');
         var date = new Date().toISOString().substr(0, 10).replace('T', ' ');
         var dateArr = date.split('-');
+        console.log(deadlineArr[0] + "," + deadlineArr[1] + "," + deadlineArr[2]);
+        console.log(dateArr[0] + "," + dateArr[1] + "," + dateArr[2]);
+
         if (deadlineArr[0] < dateArr[0]) {
             alert("You have chosen an old date");
             $('#title').val("");
             $('#content').val("");
             $('#priority').val("");
         }
-        if (!(dateArr[1] < deadlineArr[1] && dateArr[2] > deadlineArr[2])) {
+        else if (dateArr[1] > deadlineArr[1]) {
+            alert("You have chosen an old date");
+            $('#title').val("");
+            $('#content').val("");
+            $('#priority').val("");
+        }
+        else if(dateArr[1] < deadlineArr[1] && dateArr[2] > deadlineArr[2]) {
             alert("You have chosen an old date");
             $('#title').val("");
             $('#content').val("");
@@ -56,7 +65,7 @@ $('#input').click(function () {
                 deadline: deadline,
                 priority: priority
             }, function () {
-                // location.href = "/";
+                location.href = "/";
             });
         }
 

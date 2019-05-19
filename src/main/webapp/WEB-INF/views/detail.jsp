@@ -23,37 +23,36 @@
         <div class="panel-body">
             <form id="input_data_form" class="form-horizontal" role="form">
 
-                <div id="data_alert" style="display:none" class="alert alert-danger">
+                <div id="input_data_alert" style="display:none" class="alert alert-danger">
                     <p>Error:</p>
                     <span></span>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Title</label>
-                    <input name="title" id="title" size="80" value="${model.title}" placeholder="Insert Title">
-                    <%--<div id="title" class="col-md-9">--%>
-                        <%--${model.title}--%>
-                    <%--</div>--%>
+                    <div class="col-md-9">
+                        <input name="title" id="title" class="form-control" size="80" value="${model.title}" placeholder="Insert Title">
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Content</label>
-                    <textarea name="content" id="content" size="80" rows="4" cols="80" placeholder="Insert Content">${model.content}</textarea>
-                    <%--<div id="content" class="col-md-9">--%>
-                        <%--${model.content}--%>
-                    <%--</div>--%>
+                    <div class="col-md-9">
+                    <textarea name="content" id="content" class="form-control" size="80" rows="4" cols="80"
+                              placeholder="Insert Content">${model.content}</textarea>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label  class="col-md-3 control-label">Deadline</label>
+                    <label class="col-md-3 control-label">Deadline</label>
                     <div id="deadline" class="col-md-9">
-                        ${model.deadline}
+                        <div class="form-control">${model.deadline}</div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Complete</label>
                     <div id="complete" class="col-md-9">
-                        ${model.complete}
+                        <div class="form-control">${model.complete}</div>
                     </div>
                 </div>
                 <div id="todoNo" style="display:none">${model.todoNo}</div>

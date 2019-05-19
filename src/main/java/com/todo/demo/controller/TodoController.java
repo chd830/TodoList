@@ -29,13 +29,6 @@ public class TodoController {
         service.setTodo(todo);
     }
 
-    @RequestMapping(value = "/setTodoList", method = RequestMethod.POST)
-    @ResponseBody
-    public List<Todo> getTodo() {
-        List<Todo> todo = service.makeTodoList();
-        return todo;
-    }
-
     @ResponseBody
     @RequestMapping(value = "/setTodoWithoutDeadline", method = RequestMethod.POST)
     public void setTodo(@RequestParam String title, @RequestParam String content, @RequestParam int priority) {
@@ -44,6 +37,13 @@ public class TodoController {
         todo.setContent(content);
         todo.setPriority(priority);
         service.setTodo(todo);
+    }
+
+    @RequestMapping(value = "/setTodoList", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Todo> getTodo() {
+        List<Todo> todo = service.makeTodoList();
+        return todo;
     }
 
     @RequestMapping(value = "/getTodo", method = RequestMethod.GET)
@@ -55,19 +55,18 @@ public class TodoController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/updateTodo", method = RequestMethod.POST)
-    public void updateTodo(@RequestParam int todoNo, @RequestParam String title, @RequestParam String content) {
-        Todo todo = new Todo();
-        todo.setTodoNo(todoNo);
-        todo.setTitle(title);
-        todo.setContent(content);
-        service.updateTodo(todo);
-    }
-
     @RequestMapping(value = "/updateIsComplete", method = RequestMethod.POST)
-    @ResponseBody
     public void updateIsComplete(@RequestParam int todoNo) {
         service.updateIsComplete(todoNo);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/updateTodo", method = RequestMethod.POST)
+    public void updateTodo(@RequestParam int todoNo, @RequestParam String content) {
+        Todo todo = new Todo();
+        todo.setTodoNo(todoNo);
+        todo.setContent(content);
+        service.updateTodo(todo);
     }
 
     @ResponseBody
