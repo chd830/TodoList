@@ -1,0 +1,18 @@
+body {
+    overflow-x: hidden;
+}
+
+#wrapper {
+    padding-left: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper #page-content-wrapper {
+    position: absolute;
+}
+
