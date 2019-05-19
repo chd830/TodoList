@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
 @Controller
-public class ButtonController {
+public class TodoController {
 
     @Autowired
     Service service;
@@ -28,6 +27,13 @@ public class ButtonController {
         todo.setContent(content);
         todo.setPriority(priority);
         service.setTodo(todo);
+    }
+
+    @RequestMapping(value = "/setTodoList", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Todo> getTodo() {
+        List<Todo> todo = service.makeTodoList();
+        return todo;
     }
 
     @ResponseBody
@@ -57,7 +63,13 @@ public class ButtonController {
         todo.setContent(content);
         service.updateTodo(todo);
     }
-//"Fri May 17 09:00:00 GMT+09:00 2019"
+
+    @RequestMapping(value = "/updateIsComplete", method = RequestMethod.POST)
+    @ResponseBody
+    public void updateIsComplete(@RequestParam int todoNo) {
+        service.updateIsComplete(todoNo);
+    }
+
     @ResponseBody
     @RequestMapping(value = "/deleteTodo", method = RequestMethod.POST)
     public void deleteTodo(@RequestParam int todoNo) {

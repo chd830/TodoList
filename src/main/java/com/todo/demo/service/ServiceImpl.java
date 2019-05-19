@@ -28,6 +28,7 @@ public class ServiceImpl implements Service {
             Todo todo = getTodo(i + 1);
             todoList.add(todo);
         }
+
         return todoList;
     }
 

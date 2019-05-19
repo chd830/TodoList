@@ -3,7 +3,6 @@ package com.todo.demo.data;
 
 public class Todo {
     private int todoNo;
-
     private String title;
     private String content;
     private String deadline;

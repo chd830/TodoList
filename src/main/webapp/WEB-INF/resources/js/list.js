@@ -9,6 +9,7 @@ $(document).ready(function () {
         str += "<td> Deadline </td>";
         str += "<td> Complete </td>";
         $("#table").html(str);
+        var st_date = new Date().toISOString().substr(0, 10).replace('T', ' ');
         for (var i = 0; i < result.length; i++) {
             if (result[i] == null) continue;
             str += "<tr class='row'>";
@@ -17,18 +18,20 @@ $(document).ready(function () {
             str += "<td>" + result[i].priority + "</td>";
             if (result[i].deadline === null) str += "<td></td>";
             else str += "<td>" + result[i].deadline + "</td>";
+            if(result[i].deadline === st_date) {
+                alert("The deadline for the index "+i+" is today.");
+                console.dir($('.row'));
+            }
             str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
         }
-
     });
     $("<style>").text(".row { cursor: pointer; } ").appendTo("head");
 });
 
 $(document).bind("click", ".row", function (event) {
     var str = event.target.childNodes[0];
-    console.dir(str);
     if (str.textContent == "false") {
         var todoNo = str.parentNode.parentNode.childNodes[0].textContent;
         todoNo *= 1;
@@ -53,11 +56,9 @@ $(document).bind("click", ".row", function (event) {
             str.textContent = "false";
         })
     }
-
     else {
         str = str.parentNode.parentNode.childNodes[0].textContent;
         str *= 1;
-        console.log(str);
         if (str === 0) location.href = '/input';
         else {
             str += 1;
