@@ -37,9 +37,6 @@ $('#input').click(function () {
         var deadlineArr = deadline.split('-');
         var date = new Date().toISOString().substr(0, 10).replace('T', ' ');
         var dateArr = date.split('-');
-        console.log(deadlineArr[0] + "," + deadlineArr[1] + "," + deadlineArr[2]);
-        console.log(dateArr[0] + "," + dateArr[1] + "," + dateArr[2]);
-
         if (deadlineArr[0] < dateArr[0]) {
             alert("You have chosen an old date");
             $('#title').val("");

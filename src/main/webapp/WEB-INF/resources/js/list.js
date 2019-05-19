@@ -9,7 +9,8 @@ $(document).ready(function () {
         str += "<td> Deadline </td>";
         str += "<td> Complete </td>";
         $("#table").html(str);
-        var st_date = new Date().toISOString().substr(0, 10).replace('T', ' ');
+        var date = new Date().toISOString().substr(0, 10).replace('T', ' ');
+        var dateArr = date.split('-');
         for (var i = 0; i < result.length; i++) {
             if (result[i] == null) continue;
             str += "<tr class='row'>";
@@ -17,11 +18,21 @@ $(document).ready(function () {
             str += "<td>" + result[i].title + "</a></td>";
             str += "<td>" + result[i].priority + "</td>";
             if (result[i].deadline === null) str += "<td></td>";
-            else str += "<td>" + result[i].deadline + "</td>";
-            if(result[i].deadline === st_date) {
-                alert("The deadline for the index "+i+" is today.");
-                console.dir($('.row'));
+            else {
+                str += "<td>" + result[i].deadline + "</td>";
+                if(result[i].deadline === date) {
+                    alert("The deadline for the number "+i+" is today.");
+                }
+                else {
+                    var deadlineArr = result[i].deadline.split('-');
+                    if(dateArr[2] > deadlineArr[2]) {
+                        $.post('/deleteTodo', {
+                            todoNo: (i+1)
+                        });
+                    }
+                }
             }
+
             str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
