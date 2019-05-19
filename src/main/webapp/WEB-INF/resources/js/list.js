@@ -10,6 +10,7 @@ $(document).ready(function () {
         str += "<td> Complete </td>";
         $("#table").html(str);
         for (var i = 0; i < result.length; i++) {
+            if(result[i] == null) continue;
             str += "<tr class='row'>";
             str += "<td>" + i + "</td>";
             str += "<td>" + result[i].title + "</a></td>";
@@ -18,17 +19,17 @@ $(document).ready(function () {
             str += "<td>" + result[i].complete + "</td>";
             str += "</tr>";
             $("#table").html(str);
-
         }
+
     });
     $("<style>").text(".row { cursor: pointer; } ").appendTo("head");
 });
 $(document).bind("click", ".row", function (event) {
     var str = event.target.childNodes[0].parentNode.parentNode.childNodes[0].textContent;
     str *= 1 ;
-    $.get('/getTodo?num='+(str+1),{
+    $.get('/getTodo?todoNo='+(str+1),{
     }, function(result) {
-        console.dir(result);
+        console.log(result);
         document.write(result);
     })
 

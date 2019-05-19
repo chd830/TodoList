@@ -1,14 +1,22 @@
 package com.todo.demo.data;
 
 
-import java.util.Date;
-
 public class Todo {
+    private int todoNo;
+
     private String title;
     private String content;
-    private Date deadline;
+    private String deadline;
     private int priority;
     private boolean isComplete;
+
+    public int getTodoNo() {
+        return todoNo;
+    }
+
+    public void setTodoNo(int todoNo) {
+        this.todoNo = todoNo;
+    }
 
     public String getTitle() {
         return title;
@@ -26,11 +34,11 @@ public class Todo {
         this.content = content;
     }
 
-    public Date getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 

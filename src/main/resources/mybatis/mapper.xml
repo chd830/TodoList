@@ -3,10 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper">
-    <select id="selectList" resultType="com.todo.demo.data.Todo">
-      SELECT title, content, priority,deadline, isComplete
+    <select id="selectTodo" resultType="com.todo.demo.data.Todo">
+      SELECT todoNo, title, content, priority,deadline, isComplete
       FROM todotable
-      WHERE todoNo = #{num};
+      WHERE todoNo = #{todoNo};
     </select>
 
     <select id="selectTodoNo" resultType="Integer">
@@ -19,20 +19,14 @@
         VALUES(#{title}, #{content}, #{deadline}, 1, false);
     </insert>
 
-    <select id="selectTodo" resultType="com.todo.demo.data.Todo">
-        SELECT title, content, deadline, isComplete
-        FROM todotable
-        WHERE todoNo = #{num};
-    </select>
-
     <delete id="deleteTodo">
         DELETE FROM todotable
-        WHERE todoNo = #{num};
+        WHERE todoNo = #{todoNo};
     </delete>
 
     <update id="updateTodo" parameterType="com.todo.demo.data.Todo">
         UPDATE todotable
         SET title = #{title}, content = #{content}, deadline = #{deadline}
-        WHERE todoNo = #{num}
+        WHERE todoNo = #{todoNo}
     </update>
 </mapper>

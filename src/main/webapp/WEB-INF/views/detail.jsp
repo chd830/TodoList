@@ -30,26 +30,31 @@
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Title</label>
-                    <div class="col-md-9">
+                    <div id="title" class="col-md-9">
                         ${model.title}
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Content</label>
-                    <div class="col-md-9">
+                    <div id="content" class="col-md-9">
                         ${model.content}
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Deadline</label>
-                    ${model.deadline}
+                    <label  class="col-md-3 control-label">Deadline</label>
+                    <div id="deadline" class="col-md-9">
+                        ${model.deadline}
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Complete</label>
-                    ${model.complete}
+                    <div id="complete" class="col-md-9">
+                        ${model.complete}
+                    </div>
                 </div>
+                <div id="todoNo">${model.todoNo}</div>
                 <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
                     <div class="col-md-offset-3 col-md-9">
                         <button id="update" type="button" class="btn btn-success">Update Data</button>

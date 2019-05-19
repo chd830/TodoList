@@ -22,11 +22,7 @@
 <body>
 <table id="table">
 <tr>
-    <td>No</td>
-    <td>Title</td>
-    <td>Priority</td>
-    <td>Deadline</td>
-    <td>IsComplete</td>
+
 </tr>
 </table>
 <%--<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>--%>
