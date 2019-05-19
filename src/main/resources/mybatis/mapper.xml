@@ -26,7 +26,7 @@
 
     <update id="updateTodo" parameterType="com.todo.demo.data.Todo">
         UPDATE todotable
-        SET title = #{title}, content = #{content}, deadline = #{deadline}
+        SET title = #{title}, content = #{content}
         WHERE todoNo = #{todoNo}
     </update>
 </mapper>

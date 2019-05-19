@@ -39,12 +39,11 @@ public class ButtonController {
 
     @ResponseBody
     @RequestMapping(value = "/updateTodo", method = RequestMethod.POST)
-    public void updateTodo(@RequestParam String title, @RequestParam String content, @RequestParam String deadline, @RequestParam boolean isComplete) {
+    public void updateTodo(@RequestParam int todoNo, @RequestParam String title, @RequestParam String content) {
         Todo todo = new Todo();
+        todo.setTodoNo(todoNo);
         todo.setTitle(title);
         todo.setContent(content);
-        todo.setDeadline(deadline);
-        todo.setComplete(isComplete);
         service.updateTodo(todo);
     }
 //"Fri May 17 09:00:00 GMT+09:00 2019"

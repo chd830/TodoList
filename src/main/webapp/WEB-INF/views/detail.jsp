@@ -30,16 +30,18 @@
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Title</label>
-                    <div id="title" class="col-md-9">
-                        ${model.title}
-                    </div>
+                    <input name="title" id="title" size="80" value="${model.title}" placeholder="Insert Title">
+                    <%--<div id="title" class="col-md-9">--%>
+                        <%--${model.title}--%>
+                    <%--</div>--%>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-3 control-label">Content</label>
-                    <div id="content" class="col-md-9">
-                        ${model.content}
-                    </div>
+                    <textarea name="content" id="content" size="80" rows="4" cols="80" placeholder="Insert Content">${model.content}</textarea>
+                    <%--<div id="content" class="col-md-9">--%>
+                        <%--${model.content}--%>
+                    <%--</div>--%>
                 </div>
 
                 <div class="form-group">
