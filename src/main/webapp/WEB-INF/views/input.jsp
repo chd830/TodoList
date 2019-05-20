@@ -7,10 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/css/input.js" rel="stylesheet" type="text/css">
-    <!-- Custom styles for this template -->
 
 </head>
 
@@ -69,8 +67,6 @@
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
-<%--<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js"></script>--%>
-<%--<script type="text/javascript" src="/webjars/bootstrap/4.1.1/js/bootstrap.bundle.js"></script>--%>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
 <script src="/resources/js/input.js"></script>
