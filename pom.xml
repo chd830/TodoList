@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>PostBoard</groupId>
-    <artifactId>PostBoard</artifactId>
+    <groupId>TodoList</groupId>
+    <artifactId>TodoList</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>PostBoard Maven Webapp</name>
+    <name>TodoList Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -18,9 +18,9 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <junit.version>4.11</junit.version>
-        <spring-webmvc.version>${spring-web.version}</spring-webmvc.version>
+        <spring-webmvc.version>4.3.18.RELEASE</spring-webmvc.version>
         <logback-classic.version>1.2.3</logback-classic.version>
-        <spring-web.version>${spring-jdbc.version}</spring-web.version>
+        <spring-web.version>4.3.18.RELEASE</spring-web.version>
         <mybatis-spring.version>1.3.1</mybatis-spring.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <mybatis.version>3.4.1</mybatis.version>
@@ -30,6 +30,7 @@
         <bootstrap.version>4.1.1</bootstrap.version>
         <jquery.version>3.1.1</jquery.version>
         <momentjs.version>2.24.0</momentjs.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
     </properties>
 
     <dependencies>
@@ -37,16 +38,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-connector-java.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${spring-jdbc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -72,7 +63,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
-            <version>${spring-web.version}</version>
+            <version>${spring-jdbc.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -113,6 +104,13 @@
             <version>${momentjs.version}</version>
         </dependency>
         <!-- WEBJARS DEPENDENCIES END -->
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -127,9 +125,30 @@
                 </includes>
             </resource>
         </resources>
-        <finalName>PostBoard</finalName>
+        <finalName>TodoList</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.7</version>
+                    <configuration>
+                        <warsourcedirectory>src/main/webapp</warsourcedirectory>
+                        <webxml>src/main/webapp/WEB-INF/web.xml</webxml>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>tomcat-maven-plugin</artifactId>
+                    <version>3.7</version>
+                    <configuration>
+                        <url>http://서버 IP주소:톰캣 포트번호/manager/text</url>
+                        <path>/프로젝트명</path>
+                        <username>관리자 계정</username>
+                        <password>비밀번호</password>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
                     <version>3.0.0</version>
